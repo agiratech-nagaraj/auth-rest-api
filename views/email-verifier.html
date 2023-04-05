@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email-verifier</title>
+</head>
+<body>
+<h3>...Verifying Email</h3>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        alert("<%=  data %>")
+        fetch("/auth/verify-email", {
+            method: 'POST',
+            body: JSON.stringify({
+                email: "nagaraj@gmail.com",
+                token: "Xm9FKg8qYLAde0w4ePzH"
+            })
+        })
+            .then((res)=>res.json())
+            .then((res)=>alert(JSON.stringify(res))).catch((err)=>console.log(err));
+    })
+</script>
+</body>
+</html>
